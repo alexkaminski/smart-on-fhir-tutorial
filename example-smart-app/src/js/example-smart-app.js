@@ -36,7 +36,7 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
-
+          console.log(patient);
           var height = byCodes('8302-2');
           var zipcode = byCodes('45401-7');
           console.log(zipcode);
@@ -54,6 +54,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.zipcode = zipcode;
+          $("#patient").html(JSON.stringify(patient));
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
